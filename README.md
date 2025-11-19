@@ -40,7 +40,7 @@ Body:
 ```
 ### Get Loan Status
 Returns the outstanding balance, delinquency status, and full schedule.\
-Endpoint: `GET /loans/status?id={loan_id}`\
+Endpoint: `GET /loans/status?id={loan_id}`
 
 ### Make Payment
 Pays a specific installment. Must be exact amount (110,000 IDR for standard setup).\
