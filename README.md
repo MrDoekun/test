@@ -18,9 +18,10 @@ This is a billing engine that is designed to do:
 
 ### How to start
 You can start the service using
-`make up`
+```make up```
+
 you can stop the service using
-`make down`
+```make down```
 
 ## API Documentation
 ### Create Loan
