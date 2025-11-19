@@ -1,0 +1,6 @@
+mysql:
+  user: "amartha"
+  password: "amartha" # passwords should use a vault / secret manager to make it secure, but for this test I'll just put it right here
+  host: "mysql" # Use 'localhost' if running the Go app outside of Docker
+  port: 3306
+  dbname: "amartha"

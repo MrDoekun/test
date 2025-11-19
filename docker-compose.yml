@@ -1,0 +1,35 @@
+services:
+  golang-dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: golang-dev
+    ports:
+      - "3333:8080"
+    networks:
+      - amartha-test
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/go/src/amartha
+    command: ["/bin/sh", "-c", "go run cmd/http/main.go"]
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=amartha
+      - MYSQL_USER=amartha
+      - MYSQL_PASSWORD=amartha
+      - MYSQL_ROOT_PASSWORD=amartha
+    volumes:
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - amartha-test
+
+
+networks:
+  amartha-test:
+    name: amartha-test
+    driver: bridge
